@@ -3,7 +3,7 @@
  * @Author: xianghaifeng
  * @Date: 2021-11-16 11:36:25
  * @LastEditors: xianghaifeng
- * @LastEditTime: 2021-11-16 11:36:42
+ * @LastEditTime: 2021-11-16 16:29:44
  */
 import {
   CallHandler,
@@ -18,6 +18,7 @@ export class TransformInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
       map((data) => {
+        console.log(data);
         return {
           data,
           code: 0,
